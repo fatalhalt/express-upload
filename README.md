@@ -1,8 +1,9 @@
-express-upload
+nodejs-express-uploader
 ==============
 
-express-upload: node.js, express, multer, easyimage, html5 progress upload example
+express-upload: node.js, express, multer, html5 progress file upload app
 
-##Image Handling
+![c1](https://raw.githubusercontent.com/fatalhalt/express-upload/master/nodejs-express-uploader.jpg?raw=true)
 
-Uses node module easyimage for thumbnail creation to demonstrate resize upon upload
+##Forked
+from: https://github.com/jonjenkins/express-upload

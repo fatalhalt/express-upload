@@ -1,6 +1,6 @@
-<html>
+<!DOCTYPE html>
 <head>
-    <title>Upload Example</title>
+    <title>fatalhalt file upload</title>
     <style type="text/css" media="screen">
         #progress {
             width: 500px;
@@ -22,6 +22,8 @@
     </style>
 </head>
 <body>
+<img src="./img/nyancat.gif" width="200px" height="140px" />
+<h1>Upload File</h1>
 <form id="uploadForm"
       enctype="multipart/form-data"
       action="/api/upload"
@@ -35,6 +37,13 @@
 
     <div id="bar"></div>
 </div>
+
+<div id="uploadedlist" style="padding-top: 20px">
+    <h2>Uploaded Files</h2>
+    <span id="filenames">
+    </span>
+</div>
+
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="./js/upload.js"></script>
 </body>

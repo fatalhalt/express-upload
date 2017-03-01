@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
-    multer = require('multer'),
-    img = require('easyimage');
+    multer = require('multer');
+var fs = require('fs');
 
 var imgs = ['png', 'jpg', 'jpeg', 'gif', 'bmp']; // only make thumbnail for these
 
@@ -27,25 +27,14 @@ app.configure(function () {
 });
 
 app.post('/api/upload', function (req, res) {
-    if (imgs.indexOf(getExtension(req.files.userFile.name)) != -1)
-        img.info(req.files.userFile.path, function (err, stdout, stderr) {
-            if (err) throw err;
-//        console.log(stdout); // could determine if resize needed here
-            img.rescrop(
-                {
-                    src: req.files.userFile.path, dst: fnAppend(req.files.userFile.path, 'thumb'),
-                    width: 50, height: 50
-                },
-                function (err, image) {
-                    if (err) throw err;
-                    res.send({image: true, file: req.files.userFile.originalname, savedAs: req.files.userFile.name, thumb: fnAppend(req.files.userFile.name, 'thumb')});
-                }
-            );
-        });
-    else
-        res.send({image: false, file: req.files.userFile.originalname, savedAs: req.files.userFile.name});
+    res.send({image: false, file: req.files.userFile.originalname, savedAs: req.files.userFile.name});
+});
+app.get('/api/filenames', function (req, res) { // this is the RESTful API that will send json reply to browser with filenames list
+    var fnames = fs.readdir('./static/uploads', function (err, files) {
+        res.send(JSON.stringify(files));
+    });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(8081, function () {
     console.log('listening on port %d', server.address().port);
 });

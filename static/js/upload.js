@@ -49,4 +49,19 @@ $(function () {
     function status(message) {
         $('#status').text(message);
     }
+
+    function uploadedFilenameList() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', '/api/filenames', true);
+        xhr.onload = function () {
+            var fnames = JSON.parse(xhr.response);
+            fnames.forEach(function (element) {
+                $("#filenames").append("<a href=\"./uploads/" + element + "\" style=\"display: block\">" + element + "</a>");
+            });
+        }
+        xhr.send();
+    }
+    uploadedFilenameList();
 });
+
+
