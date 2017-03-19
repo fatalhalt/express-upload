@@ -13,3 +13,7 @@ node_modules/
 # AWS #
 #######
 .elasticbeanstalk/
+
+# bower #
+########
+bower_components/

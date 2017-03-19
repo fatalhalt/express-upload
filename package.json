@@ -1,13 +1,15 @@
 {
-    "name": "nodejs express file uploader",
-    "description": "nodejs-express-uploader: node.js, express, multer, html5 progress file upload app",
-    "version": "0.0.1",
-    "engines": {
-        "node": ">= 0.10.x"
-    },
-    "private": true,
-    "dependencies": {
-        "express": "3.x",
-        "multer": "0.x"
-    }
+  "name": "express-upload",
+  "description": "nodejs-express-uploader: node.js, express, multer, html5 progress file upload app",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.10.x"
+  },
+  "private": true,
+  "dependencies": {
+    "express": "^4.15.2",
+    "gulp": "^3.9.1",
+    "multer": "0.x",
+    "vue": "^2.2.4"
+  }
 }

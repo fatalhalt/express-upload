@@ -16,15 +16,15 @@ function fnAppend(fn, insert) {
     return arr + '.' + insert + '.' + ext;
 }
 
-app.configure(function () {
-    app.use(multer({
-        dest: './static/uploads/',
-        rename: function (fieldname, filename) {
-            return filename.replace(/\W+/g, '-').toLowerCase();
-        }
-    }));
-    app.use(express.static(__dirname + '/static'));
-});
+
+app.use(multer({
+    dest: './static/uploads/',
+    rename: function (fieldname, filename) {
+        return filename.replace(/\W+/g, '-').toLowerCase();
+    }
+}));
+app.use(express.static(__dirname + '/static'));
+
 
 app.post('/api/upload', function (req, res) {
     res.send({image: false, file: req.files.userFile.originalname, savedAs: req.files.userFile.name});

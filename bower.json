@@ -1,0 +1,20 @@
+{
+  "name": "express-upload",
+  "description": "nodejs-express-uploader: node.js, express, multer, html5 progress file upload app",
+  "main": "",
+  "authors": [
+    "Kyle K <kylek389@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/fatalhalt/express-upload",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.0"
+  }
+}
